@@ -7,12 +7,15 @@
 l = [1,2,3,4,5,6]
 k = 2
 
-# program
-for i in range(0, len(l) - k):
-    a = l[i]
-    l[i] = l[i + k % len(l)]
-    l[i + k % len(l)] = a
+# program (creating a new list)
+l_new = []
+for i in range(len(l)):
+    l_new.append(l[(i + k) % len(l)])
+# print output
+print(l_new)
 
+# program (without creating a copy)
+for i in range(k):
+    l.append(l.pop(0))
 # print output
 print(l)
-
