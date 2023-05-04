@@ -7,7 +7,7 @@ def linear_search(l,elem):
     return False
 
 def binary_search(l,elem):
-    # base cases
+    # base case
     if len(l)==1:
         if l[0]==elem:
             return True
@@ -16,6 +16,7 @@ def binary_search(l,elem):
     m = len(l)//2
     if elem == l[m]:
         return True
+    # inductive step
     elif elem > l[m]:
         return binary_search(l[m:],elem)
     else:
