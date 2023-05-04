@@ -16,7 +16,9 @@ def binary_search(l,elem):
         else:
             return False
     m = len(l)//2
-    if elem >= l[m]:
+    if elem == l[m]:
+        return True
+    elif elem > l[m]:
         return binary_search(l[m:],elem)
     else:
         return binary_search(l[0:m],elem)
