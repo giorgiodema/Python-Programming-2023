@@ -8,8 +8,6 @@ def linear_search(l,elem):
 
 def binary_search(l,elem):
     # base cases
-    if len(l)==0:
-        return False
     if len(l)==1:
         if l[0]==elem:
             return True
