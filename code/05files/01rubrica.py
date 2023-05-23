@@ -9,15 +9,15 @@ class Contatto:
         self.nome = nome
         self.numero = numero
 
-    def read_line(self,s:str):
+    def from_string(self,s:str):
         s = s.strip()
         l = s.split(",")
         self.nome = l[0]
         self.numero = l[1]
 
-    def write_line(self,f):
-        s = f"{self.nome},{self.numero}\n"
-        f.write(s)
+    def to_string(self):
+        s = f"{self.nome},{self.numero}"
+        return s
 
     def __eq__(self,c):
         return self.nome == c.nome
@@ -29,7 +29,7 @@ if __name__=="__main__":
         f = open(os.path.join(".","rubrica.csv"),"r",encoding="utf-8")
         for line in f:
             c = Contatto("","")
-            c.read_line(line)
+            c.from_string(line)
             rubrica.append(c)
         f.close()
 
@@ -57,7 +57,7 @@ if __name__=="__main__":
                     numero=input("inserisci numero:")
                     c = Contatto(nome,numero)
                     rubrica.append(c)
-                    c.write_line(f)
+                    print(c.to_string(),file=f)
                 else:
                     continue
     except KeyboardInterrupt:
