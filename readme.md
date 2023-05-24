@@ -11,3 +11,4 @@
 12/05/23 | Classi e Oggetti | [slides](./slides/06_classi_oggetti.pdf) [code](./code/04classes/)|
 17/05/23| Exceptions |[slides](./slides/07_eccezioni.pdf) 
 19/05/23| File e Iteratori| [slides1](./slides/08_files.pdf) [slides2](./slides/09_iteratori.pdf)|
+24/05/23| Inheritance  | [slides](./slides/10_Inheritance.pdf)
