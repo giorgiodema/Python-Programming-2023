@@ -1,4 +1,5 @@
 import string
+from typing import Callable
 
 class Node:
     def __init__(self,value,left,right):
@@ -47,9 +48,39 @@ def read_tree(path):
             parents = childrens
 
     except StopIteration:
+        f.close()
         return root
+    
+
+def inorder(root:Node, visit:Callable):
+    if root.left:
+        inorder(root.left,visit)
+    visit(root)
+    if root.right:
+        inorder(root.right,visit)
+
+def postorder(root:Node,visit:Callable):
+    if root.left:
+        postorder(root.left,visit)
+    if root.right:
+        postorder(root.right,visit)
+    visit(root)
+
+def preorder(root:Node,visit:Callable):
+    visit(root)
+    if root.left:
+        preorder(root.left,visit)
+    if root.right:
+        preorder(root.right,visit)
+
 
 
 if __name__=="__main__":
-    r = read_tree("./ex02.txt")
+    root = read_tree("./ex03.txt")
+    print("In-order")
+    inorder(root,lambda x:print(f"{x.value} -> ",end=""))
+    print("\nPre-order")
+    preorder(root,lambda x:print(f"{x.value} -> ",end=""))
+    print("\nPost-order")
+    postorder(root,lambda x:print(f"{x.value} -> ",end=""))
     print()
