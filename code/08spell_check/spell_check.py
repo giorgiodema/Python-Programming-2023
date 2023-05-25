@@ -59,6 +59,7 @@ class SpellChecker:
             line = line.strip().split("/")[0]
             line = line.lower()
             self.__dic.append(line)
+        f.close()
         # sort the list by the length of the 
         # words in ascending order
         self.__dic.sort(
