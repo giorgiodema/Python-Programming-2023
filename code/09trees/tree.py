@@ -88,6 +88,7 @@ def dfs(root:Node,order:string,visit_fn:Callable):
                      the right 
         -> postorder: visit the deepest node on the left, then visit the right 
                       sibling, and then visit the parent
+    visit_fn is called on each node according to the visiting order
     """
     
     if order not in ["inorder", "preorder", "postorder"]:
@@ -114,6 +115,23 @@ def dfs(root:Node,order:string,visit_fn:Callable):
         if root.right:
             dfs(root.right,order,visit_fn)
 
+def bfs(root:Node,visit_fn:Callable):
+    """
+    In breadth-first search (BFS) or level-order search, 
+    the search tree is broadened as much as possible before going to the next depth.
+    visit_fn is called on each node according to the visiting order
+    """
+    queue = []
+    queue.insert(0,root)
+    while len(queue) > 0:
+        node = queue.pop()
+        visit_fn(node)
+        if node.left:
+            queue.insert(0,node.left)
+        if node.right:
+            queue.insert(0,node.right)
+    
+
 
 
 if __name__=="__main__":
@@ -124,4 +142,6 @@ if __name__=="__main__":
     dfs(root,"preorder",lambda x:print(f"{x.value} -> ",end=""))
     print("\nPost-order")
     dfs(root,"postorder",lambda x:print(f"{x.value} -> ",end=""))
+    print("\nBFS")
+    bfs(root,lambda x:print(f"{x.value} -> ",end=""))
     print()
