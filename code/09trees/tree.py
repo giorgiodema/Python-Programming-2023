@@ -1,5 +1,6 @@
 import string
 from typing import Callable
+from pathlib import Path
 
 class Node:
     """
@@ -116,7 +117,7 @@ def dfs(root:Node,order:string,visit_fn:Callable):
 
 
 if __name__=="__main__":
-    root = read_tree("./ex03.txt")
+    root = read_tree(Path(__file__).with_name("ex03.txt"))
     print("In-order")
     dfs(root,"inorder",lambda x:print(f"{x.value} -> ",end=""))
     print("\nPre-order")
