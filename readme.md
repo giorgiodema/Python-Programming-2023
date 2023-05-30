@@ -12,3 +12,4 @@
 17/05/23| Exceptions |[slides](./slides/07_eccezioni.pdf) 
 19/05/23| File e Iteratori| [slides1](./slides/08_files.pdf) [slides2](./slides/09_iteratori.pdf)|
 24/05/23| Inheritance  | [slides](./slides/10_Inheritance.pdf)
+26/05/23| Exercises; Binary Trees; Tree Traversal | [exercise](./code/08spell_check/) [trees](./code/09trees/)|
