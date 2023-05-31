@@ -13,3 +13,4 @@
 19/05/23| File e Iteratori| [slides1](./slides/08_files.pdf) [slides2](./slides/09_iteratori.pdf)|
 24/05/23| Inheritance  | [slides](./slides/10_Inheritance.pdf)
 26/05/23| Exercises; Binary Trees; Tree Traversal | [exercise](./code/08spell_check/) [trees](./code/09trees/)|
+31/05/23| Exercises | [test](./code/10exam_test/)|
